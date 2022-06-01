@@ -16,10 +16,18 @@ document.addEventListener("DOMContentLoaded", function () {
   //     console.log(keySequence);
   //   };
   // });
-
+  console.log("test");
+  let playAgainButton = document.querySelector("button");
+  let introText = document.querySelector("#randtext");
+  let outroText = document.querySelector("#gameover");
+  playAgainButton.style.display = "none";
+  outroText.style.display = "none";
+  document.querySelector("#gameover").textContent = "GAME OVER!!";
+  document.querySelector("#randtext").textContent =
+    "CLICK ON THE HIGHLIGHTED TILES IN ORDER";
   keySequence = new Map();
-
   playRound();
+
   let allKeys = document.querySelectorAll("td");
   allKeys.forEach((element) => {
     element.addEventListener("click", (e) => {
@@ -43,6 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
       key.style.backgroundColor = "rgb(255,0,0)";
       gameOver = true;
       clickEnable = false;
+      playAgainButton.style.display = "block";
+      introText.style.display = "none";
+      outroText.style.display = "block";
     }
 
     if (keySequence.size === roundClicks && !gameOver) {
