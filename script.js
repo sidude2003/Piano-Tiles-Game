@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("#gameover").textContent = "GAME OVER!!";
   document.querySelector("#randtext").textContent =
     "CLICK ON THE HIGHLIGHTED TILES IN ORDER";
+  const correctS = document.querySelector("#correctSound");
+  const wrongS = document.querySelector("#wrongAnswer");
   keySequence = new Map();
   playRound();
 
@@ -46,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       key.style.backgroundColor = "rgb(4,252,231)";
       setTimeout(() => {
         key.style.backgroundColor = "rgb(8, 252, 109)";
+        correctS.play();
       }, 500);
     } else {
       key.style.backgroundColor = "rgb(255,0,0)";
@@ -54,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       playAgainButton.style.display = "block";
       introText.style.display = "none";
       outroText.style.display = "block";
+      wrongS.play();
     }
 
     if (keySequence.size === roundClicks && !gameOver) {
