@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.target.getAttribute("id") === keySequence.get(roundClicks)) {
       key.style.backgroundColor = "rgb(4,252,231)";
       setTimeout(() => {
-        key.style.backgroundColor = "rgb(8, 252, 109)";
+        key.style.backgroundColor = "rgb(4,252,231)";
         correctS.play();
       }, 500);
     } else {
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(keySequence);
 
     setTimeout(() => {
-      key.style.backgroundColor = "rgb(8, 252, 109)";
+      key.style.backgroundColor = "rgb(123, 63, 0)";
     }, 500);
   }
 
@@ -99,14 +99,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function lightKey(key) {
-    key.style.backgroundColor = "rgb(4,252,231)";
+    key.style.backgroundColor = "rgb(255, 255, 255)";
 
     console.log(keySequence);
 
     setTimeout(() => {
-      key.style.backgroundColor = "rgb(8, 252, 109)";
+      key.style.backgroundColor = "rgb(123, 63, 0)";
     }, 500);
   }
+  
 
   function playRound() {
     addToSequence();
